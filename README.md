@@ -1,6 +1,24 @@
 # GithubSearch
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 9.0.6.
+## Technology
+<ol>
+<li>This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 9.0.6.</li>
+<li>Typescript</li>
+<li>HTML & CSS (Bootstrap)</li>
+</ol>
+
+## Known Bugs and Development
+ To fix a bug or improve the module, follow this steps:
+<ul>
+<li>Fork the repository</li>
+<li>Create a new branch (git branch fix-bug)</li>
+<li>Move to branch</li>
+<li>Make the changes ,then add the changes to reflect</li>
+<li>Commit your changes(git commit -m "Fix js bug") </li>
+<li>Push changes (git push origin fix-bug)</li>
+<li>Create a pull request.</li>
+</ul>
+
 
 ## Development server
 
