@@ -6,15 +6,24 @@ import { User } from './../../user';
 @Component({
   selector: 'app-profile',
   templateUrl: './profile.component.html',
-  styleUrls: ['./profile.component.css']
+  styleUrls: ['./profile.component.css'],
 })
 export class ProfileComponent implements OnInit {
   user: any;
+  repo: any;
   username: string;
 
-  constructor(private gprofileService: GprofileService) { }
+  constructor(private gprofileService: GprofileService) {
+    this.gprofileService.getProfileInfo().subscribe((user) => {
+      console.log(user);
+      this.user = user;
+    });
+    this.gprofileService.getProfileRepos().subscribe(repo => {
+        console.log(repo);
+        this.repo = repo;
+      });
 
-  ngOnInit(): void {
   }
 
+  ngOnInit(): void {}
 }

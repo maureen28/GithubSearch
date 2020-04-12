@@ -15,15 +15,15 @@
       <div class="panel-body">
         <div class="row">
           <div class="col-sm-3 ">
-            <img src="{{user?.avatar_url}}" alt="Profile image" height="200px" class='img-responsive'>
+            <img src="{{user?.avatar_url}}" alt="Profile image" height="200px"class='img-responsive'>
           </div>
           <div class="col-sm-5 ">
             <ul class="list-group">
-              <li class="list-group-item" *ngIf='user.bio'>{{user.bio}} </li>
+              <li class="list-group-item" *ngIf='user.bio'><b>Bio:</b> {{user.bio}} </li>
               <li class="list-group-item" *ngIf='user.email'><a href="mailto:{{user.email}}"
                   target="_blank">{{user.email}}</a></li>
-              <li class="list-group-item"> Public Repos <span
-                  class='badge badge-pill badge-info'>{{user.public_repos}}</span></li>
+              <li class="list-group-item"><b> Public Repos</b> <span
+                  class='badge badge-pill badge-info'>  {{user.public_repos}}</span></li>
             </ul>
           </div>
           <div class="col-sm-4 ">
@@ -40,3 +40,18 @@
     </div>
   </div>
 <hr>
+<!-- Repos -->
+<div id="Repo">
+  <div class="row">
+    <div class="col-md-4" *ngFor='let repo of repo'>
+      <h6 class="card-title "><b>{{repo.name}}</b></h6>
+      <div class="card-body">
+        <p class="card-text">{{repo.description}}</p>
+        <div class="d-flex card-menu"><a href="{{repo.html_url}}" target="_blank" class="btn btn-sm btn-primary">View
+            this project on github</a>
+        </div><br>
+        <p>Created <i class='fa fa-calendar'></i> : {{repo.created_at | datePassed}}</p>
+      </div>
+    </div>
+  </div>
+</div>
