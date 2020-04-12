@@ -5,3 +5,10 @@
     </div>
   </form>
 
+  <!-- User -->
+  <div id='User' *ngIf='user'>
+    <div class="panel panel-collapse">
+      <div class="panel-heading">
+        <h5><b>Name:</b> {{user.name}}</h5>
+        <p><b>Username:</b> {{user.login}}</p>
+      </div>
