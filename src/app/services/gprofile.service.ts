@@ -1,4 +1,6 @@
 import { Injectable } from '@angular/core';
+import { HttpClient} from '@angular/common/http';
+import { User } from './../user';
 
 @Injectable({
   providedIn: 'root',
@@ -8,5 +10,5 @@ export class GprofileService {
   private clientId: '0ae4c8853c92e70867a5';
   private clientSecret: '7716f03d7070910448a899b72d01336d866a86e1';
 
-  constructor() {}
+  constructor(private http: HttpClient) {}
 }
