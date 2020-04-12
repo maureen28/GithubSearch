@@ -1,5 +1,10 @@
 # GithubSearch
 
+## Description
+This is a website where users' can enter a GitHub username into a form, submit it, and see the names and descriptions of that person's public repositories.
+A user can also look for repositories.
+# By: Maureen Wairimu.
+
 ## Technology
 <ol>
 <li>This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 9.0.6.</li>
