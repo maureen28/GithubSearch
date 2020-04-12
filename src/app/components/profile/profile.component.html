@@ -17,3 +17,12 @@
           <div class="col-sm-3 ">
             <img src="{{user?.avatar_url}}" alt="Profile image" height="200px" class='img-responsive'>
           </div>
+          <div class="col-sm-5 ">
+            <ul class="list-group">
+              <li class="list-group-item" *ngIf='user.bio'>{{user.bio}} </li>
+              <li class="list-group-item" *ngIf='user.email'><a href="mailto:{{user.email}}"
+                  target="_blank">{{user.email}}</a></li>
+              <li class="list-group-item"> Public Repos <span
+                  class='badge badge-pill badge-info'>{{user.public_repos}}</span></li>
+            </ul>
+          </div>
