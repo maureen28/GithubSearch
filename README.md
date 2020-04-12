@@ -5,6 +5,15 @@ This is a website where users' can enter a GitHub username into a form, submit i
 A user can also look for repositories.
 # By: Maureen Wairimu.
 
+## Setup Installation and Instruction
+<ol>
+<li>Clone this repository to a location in your file system.</li>
+<li>Open terminal command line then navigate to the root folder of the application.</li>
+<li>Run `ng serve` command.</li>
+<li>Navigate to http://localhost:4200/ in your browser.</li>
+</ol>
+
+
 ## Technology
 <ol>
 <li>This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 9.0.6.</li>
