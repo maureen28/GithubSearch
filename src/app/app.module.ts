@@ -10,6 +10,7 @@ import { NotFoundComponent } from './components/not-found/not-found.component';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { ProfileDetailsComponent } from './components/profile-details/profile-details.component';
+import { UserComponent } from './components/user/user.component';
 
 @NgModule({
   declarations: [
@@ -19,6 +20,7 @@ import { ProfileDetailsComponent } from './components/profile-details/profile-de
     GitTextDecoDirective,
     NotFoundComponent,
     ProfileDetailsComponent,
+    UserComponent,
   ],
   imports: [
     BrowserModule,

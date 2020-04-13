@@ -19,6 +19,7 @@ export class ProfileDetailsComponent implements OnInit {
     this.http.get<ApiUsers>('http://api.github.com/users/' + this.username + '?access_token=' + this.apiKey).toPromise().then((data) => {
       this.userInterface = data;
       console.log(data);
+      // tslint:disable-next-line: no-shadowed-variable
       this.http.get(this.userInterface.repos_url + '?access_token=' + this.apiKey).toPromise().then((data) => {
         this.userInterface.repos =  data;
         console.log(this.userInterface);
