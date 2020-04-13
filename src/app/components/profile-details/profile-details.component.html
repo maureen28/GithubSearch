@@ -1,0 +1,62 @@
+<div class="container">
+  <form class="form-inline" #userForm='ngForm' (submit)="getUser()">
+    <div class="form-group mx-sm-3 mb-2">
+      <input type="text" class="form-control" [(ngModel)]="username" name="username">
+    </div>
+    <button type="submit" class="btn btn-outline-info  mb-2">Find User</button>
+  </form>
+</div>
+
+<!-- User -->
+
+<div class="panel panel-collapse">
+  <div class="panel-heading">
+    <h5><b>Name:</b> {{userInterface.name}}</h5>
+    <p><b>Username:</b> {{userInterface.login}}</p>
+  </div>
+
+  <div class="panel-body">
+    <div class="row">
+      <div class="col-sm-3 ">
+        <img src="{{userInterface?.avatar_url}}" alt="Profile image" height="200px" class='img-responsive'>
+      </div>
+      <div class="col-sm-5 ">
+        <ul class="list-group">
+          <li class="list-group-item" *ngIf='userInterface.bio'>{{userInterface.bio}} </li>
+          <li class="list-group-item" *ngIf='userInterface.email'><a href="mailto:{{userInterface.email}}"
+              target="_blank">{{userInterface.email}}</a></li>
+          <li class="list-group-item"> Public Repos <span
+              class='badge badge-pill badge-info'>{{userInterface.public_repos}}</span></li>
+        </ul>
+      </div>
+      <div class="col-sm-4 ">
+        <div>
+          <p>
+            Following <span class='badge badge-pill badge-secondary'>{{userInterface.following}}</span>
+            Followers <span class='badge badge-pill badge-secondary'>{{userInterface.followers}}</span>
+          </p>
+        </div>
+        <p><a href="{{userInterface.html_url}}" target="_blank" class="btn btn-success btn-sm">View profile on
+            github</a></p>
+      </div>
+    </div>
+  </div>
+</div>
+<br>
+<hr>
+<!-- Repos -->
+<div class="container">
+  <div class="row">
+    <div class="col-md-4" *ngFor='let repo of userInterface.repos'>
+      <h6 class="card-title "><b>{{repo.name}}</b></h6>
+      <div class="card-body">
+        <p *ngIf="repo.description; else elseBlock">{{repo.description}}</p>
+        <ng-template #elseBlock>no description</ng-template>
+        <div class="d-flex card-menu"><a href="{{repo.html_url}}" target="_blank" class="btn btn-sm btn-primary">View
+            this project on github</a>
+        </div><br>
+        <p>Created <i class='fa fa-calendar'></i> : {{repo.created_at | datePassed}}</p>
+      </div>
+    </div>
+  </div>
+</div>
