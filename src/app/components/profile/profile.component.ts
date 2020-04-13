@@ -22,7 +22,10 @@ export class ProfileComponent implements OnInit {
         console.log(repo);
         this.repo = repo;
       });
+  }
 
+  findProfiles() {
+    this.gprofileService.updateProfile(this.username);
   }
 
   ngOnInit(): void {}

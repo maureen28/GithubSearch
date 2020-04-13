@@ -3,8 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { User } from './../user';
 import { Observable, from } from 'rxjs';
 import { map } from 'rxjs/operators';
-import { Repo } from './../repo';
-
+import { Repository } from './../repo';
 
 @Injectable({
   providedIn: 'root',
@@ -31,9 +30,9 @@ export class GprofileService {
       )
       .pipe(map((res) => res));
   }
-  getProfileRepos(): Observable<Repo[]> {
+  getProfileRepos(): Observable<Repository[]> {
     return this.http
-      .get<Repo[]>(
+      .get<Repository[]>(
         'https://api.github.com/users/' +
           this.username +
           '/repos?client_id=' +
@@ -42,5 +41,8 @@ export class GprofileService {
           this.clientSecret
       )
       .pipe(map((res) => res));
+  }
+  updateProfile(username: string) {
+    this.username = username;
   }
 }
