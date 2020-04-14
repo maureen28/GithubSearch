@@ -1,0 +1,64 @@
+<div class="container">
+  <form #userForm='ngForm'>
+    <div class="form-group">
+      <input type="text" class="form-control" placeholder="Search username" name="username"
+      #userName='ngModel' [(ngModel)]="username" (keyup)='findAllProfiles()'>
+    </div>
+  </form>
+
+  <!-- User -->
+  <div id='User' *ngIf='user'>
+    <div class="panel panel-collapse">
+      <div class="panel-heading">
+        <h5><b>Name:</b> {{user.name}}</h5>
+        <p><b>Username:</b> {{user.login}}</p>
+      </div>
+
+      <div class="panel-body">
+        <div class="row">
+          <div class="col-sm-3 ">
+            <img src="{{user?.avatar_url}}" alt="Profile image" height="200px" class='img-responsive'>
+          </div>
+          <div class="col-sm-5 ">
+            <ul class="list-group">
+              <li class="list-group-item" >{{user.bio}} </li>
+              <li class="list-group-item" ><a href="mailto:{{user.email}}"
+                  target="_blank">{{user.email}}</a></li>
+              <li class="list-group-item"> Public Repos <span
+                  class='badge badge-pill badge-info'>{{user.public_repos}}</span></li>
+            </ul>
+          </div>
+          <div class="col-sm-4 ">
+            <div>
+              <p>
+                Following <span class='badge badge-pill badge-secondary'>{{user.following}}</span>
+                Followers <span class='badge badge-pill badge-secondary'>{{user.followers}}</span>
+              </p>
+            </div>
+            <p><a href="{{user.html_url}}" target="_blank" class="btn btn-success btn-sm">View profile on github</a></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+<hr>
+
+<!-- REPO -->
+<div class="container">
+  <div class="row">
+    <div class="col-md-4" *ngFor='let repo of repos'>
+      <div class="card">
+        <div class="card-body">
+          <h2 class="text-info">{{repo.name}}</h2>
+          <p *ngIf="repo.description; else elseBlock">{{repo.description}}</p>
+          <ng-template #elseBlock>no description</ng-template>
+          <div class="d-flex card-menu"><a href="{{repo.html_url}}" target="_blank" class="btn btn-sm btn-primary">View
+            this project on github</a>
+        </div><br>
+        <p>Created <i class='fa fa-calendar'></i> : {{repo.created_at | datePassed}}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
