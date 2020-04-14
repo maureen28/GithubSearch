@@ -7,9 +7,11 @@
      </form>
     </div>
   </div>
+  <br>
+  <hr>
   <div class="row">
-    <div class="col-md-6" *ngFor='let repo of userInterface.items'>
-      <div class="panel panel-group">
+    <div class="col-md-4" *ngFor='let repo of userInterface.items'>
+      <div class="panel panel-default">
         <h5 class="panel-heading">{{repo.name}}</h5>
         <p class="panel-body">{{repo.description}}</p>
         <div>
