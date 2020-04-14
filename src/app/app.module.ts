@@ -8,10 +8,10 @@ import { GitTextDecoDirective } from './git-text-deco.directive';
 import { NotFoundComponent } from './components/not-found/not-found.component';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
-import { UserDetailsComponent } from './components/user-details/user-details.component';
 import { ProfileComponent } from './components/profile/profile.component';
 import { UsersComponent } from './components/users/users.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
+import { RepoComponent } from './components/repo/repo.component';
 
 
 @NgModule({
@@ -20,10 +20,10 @@ import { NavbarComponent } from './components/navbar/navbar.component';
     DatePassedPipe,
     GitTextDecoDirective,
     NotFoundComponent,
-    UserDetailsComponent,
     ProfileComponent,
     UsersComponent,
     NavbarComponent,
+    RepoComponent,
 
 
   ],

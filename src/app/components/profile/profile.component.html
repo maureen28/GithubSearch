@@ -10,8 +10,8 @@
   <div id='User' *ngIf='user'>
     <div class="panel panel-collapse">
       <div class="panel-heading">
-        <h5><b>Name:</b> {{user.name}}</h5>
-        <p><b>Username:</b> {{user.login}}</p>
+        <h5><b>Name :</b> {{user.name}}</h5>
+        <p><b>Username :</b> {{user.login}}</p>
       </div>
 
       <div class="panel-body">
@@ -23,7 +23,7 @@
             <ul class="list-group">
               <li class="list-group-item" >Bio: {{user.bio}} </li>
               <li class="list-group-item" ><a href="mailto:{{user.email}}"
-                  target="_blank">{{user.email}}</a></li>
+                  target="_blank">Email: {{user.email}}</a></li>
               <li class="list-group-item"> Public Repos <span
                   class='badge badge-pill badge-info'>{{user.public_repos}}</span></li>
             </ul>

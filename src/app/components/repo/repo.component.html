@@ -1,0 +1,18 @@
+<div class="container">
+  <form>
+    <input class="form-control" type="text" placeholder="Enter repository name" aria-label="Search"
+      [(ngModel)]='username' name='username' (keyup)='getRepo()'>
+  </form>
+  <div class="row">
+    <div class="col-md-6" *ngFor='let repo of userInterface.repos'>
+      <div class="panel panel-group">
+        <h5 class="panel-heading">{{repo.name}}</h5>
+        <p class="panel-body">{{repo.description}}</p>
+        <div>
+          <a href="{{repo.html_url}}" class="btn btn-sm btn-outline-dark">View on Github</a>
+        </div>
+        <p>Created <i class='fa fa-calendar'></i> : {{repo.created_at | datePassed}}</p>
+      </div>
+    </div>
+  </div>
+</div>
