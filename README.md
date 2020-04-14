@@ -21,6 +21,8 @@ The webpage has been created using Angular CLI. A search feature has been used w
 <li>The user can search for other users by typing in the username.</li>
 </ul>
 
+## Live Link: https://maureen28.github.io/GithubSearch/users
+
 ## Technology
 <ol>
 <li>This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 9.0.6.</li>
