@@ -1,13 +1,13 @@
 <div class="container">
   <form #userForm='ngForm'>
     <div class="form-group">
-      <input type="text" class="form-control" placeholder="Search username" name="userName"
-      #username='ngModel' [(ngModel)]="userName" (keydown)='findProfiles()'>
+      <input type="text" class="form-control" placeholder="Search username" name="user"
+      #user='ngModel' [(ngModel)]="user" (keyup)='findProfiles()'>
     </div>
   </form>
 
   <!-- User -->
-  <div id='User' *ngIf='user'>
+  <!-- <div id='User' *ngFor='let user of this.users'>
     <div class="panel panel-collapse">
       <div class="panel-heading">
         <h5><b>Name:</b> {{user.name}}</h5>
@@ -41,4 +41,4 @@
       </div>
     </div>
   </div>
-<hr>
+<hr> -->

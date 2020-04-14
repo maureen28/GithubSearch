@@ -8,7 +8,7 @@ import { ApiRepos } from './../repo.interface';
   styleUrls: ['./repo.component.css'],
 })
 export class RepoComponent implements OnInit {
-  apiKey: 'c60346d07270b3041fc1ef3140e1ba566e6';
+
   userInterface: ApiRepos;
   repository: string;
   constructor(private http: HttpClient) {}

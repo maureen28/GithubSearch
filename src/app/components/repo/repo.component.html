@@ -3,8 +3,8 @@
     <div class="col">
       <form>
         <input class="form-control" type="text" placeholder="Enter repository name" aria-label="Search"
-          [(ngModel)]='repository' name='repository' (keyup) = 'getRepo()' >
-     </form>
+          [(ngModel)]='repository' name='repository' (keyup)='getRepo()'>
+      </form>
     </div>
   </div>
   <br>
@@ -13,12 +13,16 @@
     <div class="col-md-4" *ngFor='let repo of userInterface.items'>
       <div class="panel panel-default">
         <h5 class="panel-heading">{{repo.name}}</h5>
-        <p class="panel-body">{{repo.description}}</p>
-        <div>
-          <a href="{{repo.html_url}}" class="btn btn-sm btn-outline-dark">View on Github</a>
+        <div class="panel-body">
+          <p>
+            {{repo.description}}
+          </p>
+          <div>
+            <a href="{{repo.html_url}}" class="btn btn-sm btn-outline-dark">View on Github</a>
+          </div>
+          <p><span class='badge badge-pill badge-info'>{{repo.forks}}</span></p>
+          <p>Created <i class='fa fa-calendar'></i> : {{repo.created_at | datePassed}}</p>
         </div>
-        <p></p>
-        <p>Created <i class='fa fa-calendar'></i> : {{repo.created_at | datePassed}}</p>
       </div>
     </div>
   </div>
