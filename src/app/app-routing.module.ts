@@ -9,7 +9,7 @@ import { Routes, RouterModule } from '@angular/router';
 const routes: Routes = [
   { path: 'profile', component: ProfileComponent },
   { path: 'users', component: UsersComponent },
-  {path: 'repo' , component: },
+  // {path: 'repo' , component: },
   { path: '', redirectTo: '/users', pathMatch: 'full' },
   { path: '**', component: NotFoundComponent },
 ];

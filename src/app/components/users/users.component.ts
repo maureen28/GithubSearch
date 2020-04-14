@@ -1,4 +1,8 @@
+import { Repository } from './../../repo';
+import { UserServiceService } from './../../services/user-service.service';
 import { Component, OnInit } from '@angular/core';
+import { User } from 'src/app/user';
+
 
 @Component({
   selector: 'app-users',
@@ -10,7 +14,7 @@ export class UsersComponent implements OnInit {
   user: any;
   userName: string;
 
-    constructor(private userService: UserService) {
+    constructor(private userService: UserServiceService) {
    }
 
   findProfiles() {
