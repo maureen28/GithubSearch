@@ -1,9 +1,8 @@
 # GithubSearch
 
 ## Description
-This is a website where users' can enter a GitHub username into a form, submit it, and see the names and descriptions of that person's public repositories.
-A user can also look for repositories.
-# By: Maureen Wairimu.
+The webpage has been created using Angular CLI. A search feature has been used which has the ngModel directive in the input type text to trigger the call to the API once the user has keyed in a character. The webpage consumes github api and fetches the data requested by returning an observable item of a type defined in the custom classes created.
+# Author : Maureen Wairimu.
 
 ## Setup Installation and Instruction
 <ol>
@@ -13,6 +12,13 @@ A user can also look for repositories.
 <li>Navigate to http://localhost:4200/ in your browser.</li>
 </ol>
 
+## BDD
+<ul>
+<li>Below is the landing page</li>
+
+<li>The user can search for a repository by typing in the repository name.</li>
+<li>The user can search for other users by typing in the username.</li>
+</ul>
 
 ## Technology
 <ol>
