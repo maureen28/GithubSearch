@@ -15,8 +15,9 @@ The webpage has been created using Angular CLI. A search feature has been used w
 ## BDD
 <ul>
 <li>Below is the landing page</li>
-
+<img src="src/assets/lP.jpg" alt="Github Search" width="400"/>
 <li>The user can search for a repository by typing in the repository name.</li>
+<img src="src/assets/Repo.jpg" alt="Repo" width="400"/>
 <li>The user can search for other users by typing in the username.</li>
 </ul>
 
