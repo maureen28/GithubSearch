@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { ApiUsers } from './../repo.interface';
+import { ApiRepos } from './../repo.interface';
 
 @Component({
   selector: 'app-repo',
@@ -9,22 +9,19 @@ import { ApiUsers } from './../repo.interface';
 })
 export class RepoComponent implements OnInit {
   apiKey: 'c60346d07270b3041fc1ef3140e1ba566e6';
-  userInterface: ApiUsers;
-  username = 'maureen28';
+  userInterface: ApiRepos;
+  repository: string;
   constructor(private http: HttpClient) {}
 
   getRepo() {
     this.http
-      .get<ApiUsers>(
-        'http://api.github.com/users/repos' +
-          this.username +
-          '?access_token=' +
-          this.apiKey
+      .get<ApiRepos>(
+        'https://api.github.com/search/repositories?q=' + this.repository + ''
       )
       .toPromise()
       .then((data) => {
-        this.userInterface.repos = data;
-        console.log(this.userInterface);
+        console.log(data);
+        this.userInterface = data;
       });
   }
   ngOnInit(): void {

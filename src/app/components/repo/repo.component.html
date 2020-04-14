@@ -1,10 +1,15 @@
 <div class="container">
-  <form>
-    <input class="form-control" type="text" placeholder="Enter repository name" aria-label="Search"
-      [(ngModel)]='username' name='username' (keyup)='getRepo()'>
-  </form>
   <div class="row">
-    <div class="col-md-6" *ngFor='let repo of userInterface.repos'>
+    <div class="col">
+      <form>
+        <input class="form-control" type="text" placeholder="Enter repository name" aria-label="Search"
+          [(ngModel)]='repository' name='username' >
+          <button (click)='getRepo()'>get repo</button>
+      </form>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-6" *ngFor='let repo of userInterface.items'>
       <div class="panel panel-group">
         <h5 class="panel-heading">{{repo.name}}</h5>
         <p class="panel-body">{{repo.description}}</p>

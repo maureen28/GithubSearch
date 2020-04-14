@@ -2,7 +2,7 @@
   <form #userForm='ngForm'>
     <div class="form-group">
       <input type="text" class="form-control" placeholder="Search username" name="userName"
-      #username='ngModel' [(ngModel)]="userName" (keyup)='findProfiles()'>
+      #username='ngModel' [(ngModel)]="userName" (keydown)='findProfiles()'>
     </div>
   </form>
 
