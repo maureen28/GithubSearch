@@ -1,5 +1,5 @@
 export class Repository {
-  name: string;
+name: string;
 description: string;
 // tslint:disable-next-line: variable-name
 html_url: string;

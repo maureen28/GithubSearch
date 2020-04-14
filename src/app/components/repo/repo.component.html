@@ -3,9 +3,8 @@
     <div class="col">
       <form>
         <input class="form-control" type="text" placeholder="Enter repository name" aria-label="Search"
-          [(ngModel)]='repository' name='username' >
-          <button (click)='getRepo()'>get repo</button>
-      </form>
+          [(ngModel)]='repository' name='repository' (keyup) = 'getRepo()' >
+     </form>
     </div>
   </div>
   <div class="row">
@@ -16,6 +15,7 @@
         <div>
           <a href="{{repo.html_url}}" class="btn btn-sm btn-outline-dark">View on Github</a>
         </div>
+        <p></p>
         <p>Created <i class='fa fa-calendar'></i> : {{repo.created_at | datePassed}}</p>
       </div>
     </div>
