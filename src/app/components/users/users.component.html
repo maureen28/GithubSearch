@@ -1,13 +1,17 @@
 <div class="container">
-  <form #userForm='ngForm'>
-    <div class="form-group">
-      <input type="text" class="form-control" placeholder="Search username" name="user"
-      #user='ngModel' [(ngModel)]="user" (keyup)='findProfiles()'>
+  <div class="row">
+    <div class="col">
+      <form #userForm='ngForm'>
+        <div class="form-group">
+          <input type="text" class="form-control" placeholder="Search username" name="users" [(ngModel)]="users"
+            (keyup)='getUsers()'>
+        </div>
+      </form>
     </div>
-  </form>
+  </div>
 
-  <!-- User -->
-  <!-- <div id='User' *ngFor='let user of this.users'>
+  <!--User -->
+  <div id='User' *ngFor='let user of userInterface.items'><br>
     <div class="panel panel-collapse">
       <div class="panel-heading">
         <h5><b>Name:</b> {{user.name}}</h5>
@@ -41,4 +45,4 @@
       </div>
     </div>
   </div>
-<hr> -->
+  <hr>

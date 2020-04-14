@@ -1,5 +1,4 @@
-export interface ApiUsers {
-  name: string;
-  bio: string;
-
+export interface ApiUser {
+  items: any;
 }
+

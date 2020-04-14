@@ -1,4 +1,4 @@
-import { ApiUsers } from './../user.interface';
+import { ApiUser } from './../user.interface';
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 
@@ -8,20 +8,20 @@ import { HttpClient } from '@angular/common/http';
   styleUrls: ['./users.component.css'],
 })
 export class UsersComponent implements OnInit {
-
-  user: string;
-  users: ApiUsers;
-
+  userInterface: ApiUser;
+  users: string;
   constructor(private http: HttpClient) {}
 
-  findProfiles() {
-    this.http.get<ApiUsers>('https://api.github.com/search/users?q=' + this.user + '').toPromise()
-    .then((data) => {
-      console.log(data);
-      this.users = data;
-    });
+  getUsers() {
+    this.http
+      .get<ApiUser>('https://api.github.com/search/users?q=' + this.users + '')
+      .toPromise()
+      .then((data) => {
+        console.log(data);
+        this.userInterface = data;
+      });
   }
   ngOnInit(): void {
-    this.findProfiles();
+    this.getUsers();
   }
 }

@@ -12,17 +12,17 @@
   <div class="row">
     <div class="col-md-4" *ngFor='let repo of userInterface.items'>
       <div class="panel panel-default">
-        <h5 class="panel-heading">{{repo.name}}</h5>
+        <h5 id='rp' class="panel-heading text-info " >{{repo.name}}</h5>
         <div class="panel-body">
           <p>
             {{repo.description}}
           </p>
           <div>
             <a href="{{repo.html_url}}" class="btn btn-sm btn-outline-dark">View on Github</a>
-          </div>
-          <p><span class='badge badge-pill badge-info'>{{repo.forks}}</span></p>
-          <p>Created <i class='fa fa-calendar'></i> : {{repo.created_at | datePassed}}</p>
-        </div>
+          </div><br>
+          <p><b>Forks : </b><span class='badge badge-pill badge-danger'>  {{repo.forks}}</span></p>
+          <p><b>Created </b> <i class='fa fa-calendar'></i> : {{repo.created_at | datePassed}}</p>
+        </div><hr>
       </div>
     </div>
   </div>
